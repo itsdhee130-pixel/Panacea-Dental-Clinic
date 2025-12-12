@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Zap, Scan, Sparkles, Microscope, ArrowRight, X, Check, Calendar } from 'lucide-react';
+import { Zap, Scan, Sparkles, Heart, ArrowRight, X, Check, Calendar } from 'lucide-react';
 import AnimatedButton from './AnimatedButton';
 
 interface ServicesProps {
@@ -10,39 +10,39 @@ interface ServicesProps {
 const services = [
   {
     id: 'root-canal',
-    title: 'Laser Root Canal',
-    description: 'Microscopic precision with AI-guided tools for 100% painless treatments.',
-    longDescription: 'Our advanced Laser Root Canal treatment uses cutting-edge biolase technology to remove infection with microscopic precision. Unlike traditional methods, our AI-guided apex locators ensure the procedure is 100% accurate and significantly faster, often completed in a single sitting.',
+    title: 'Painless RCT',
+    description: 'Advanced Root Canal Treatment with rotary instruments for 100% precision.',
+    longDescription: 'Our Root Canal Treatment is designed to be completely painless. We use advanced rotary endodontics and apex locators to ensure the infection is removed completely. Most procedures are completed in a single sitting.',
     icon: <Zap size={32} />,
     color: 'from-blue-500 to-cyan-400',
-    features: ['Single Sitting Procedure', 'Microscope Enhanced Precision', '100% Pain-Free Guarantee', 'Laser Disinfection']
+    features: ['Single Sitting Option', 'Painless Procedure', 'Digital X-Ray Guided', 'Post-Treatment Care']
   },
   {
     id: 'implants',
-    title: '3D Dental Implants',
-    description: 'Restore your smile permanently with biocompatible titanium implants.',
-    longDescription: 'Regain the strength and look of natural teeth with our premium Swiss Titanium Implants. We use 3D CBCT scanning to plan the exact placement of your implant before surgery, ensuring a minimally invasive procedure and faster healing time.',
+    title: 'Dental Implants',
+    description: 'Permanent fixed solution for missing teeth using high-grade titanium.',
+    longDescription: 'Restore your smile and chewing ability with our premium dental implants. We use biocompatible titanium implants that fuse naturally with your jawbone, acting just like a natural tooth root.',
     icon: <Scan size={32} />,
     color: 'from-purple-500 to-indigo-500',
-    features: ['Lifetime Warranty', 'Swiss Titanium Grade 5', 'Immediate Loading Available', '3D Computer Guided Surgery']
+    features: ['Lifetime Durability', 'Natural Look & Feel', 'Minimally Invasive', 'Prevents Bone Loss']
   },
   {
-    id: 'cosmetic',
-    title: 'Cosmetic Design',
-    description: 'Digital smile design to preview your perfect smile before we begin.',
-    longDescription: 'Transform your confidence with our Digital Smile Design (DSD) protocol. We take high-resolution photos and videos to digitally engineer your perfect smile. You can "test drive" your new smile with a mockup before we even touch your teeth.',
+    id: 'ortho',
+    title: 'Braces & Aligners',
+    description: 'Straighten your teeth with Metal/Ceramic Braces or Invisible Aligners.',
+    longDescription: 'Whether you are a child or an adult, we offer orthodontic solutions to straighten your teeth. Choose from traditional braces or go for our Invisible Aligners for a discreet treatment experience.',
     icon: <Sparkles size={32} />,
     color: 'from-pink-500 to-rose-400',
-    features: ['Digital Smile Preview', 'Ultra-thin Ceramic Veneers', 'Teeth Whitening included', 'Custom Shade Matching']
+    features: ['Invisible Aligners', 'Ceramic Braces', 'Correction of Jaw Alignment', 'Customized Plans']
   },
   {
-    id: 'general',
-    title: 'Advanced Hygiene',
-    description: 'Air-flow polishing and guided biofilm therapy for ultimate cleanliness.',
-    longDescription: 'Experience the spa-like sensation of our Guided Biofilm Therapy (GBT). We use warm water air-flow technology to remove stains and plaque without the harsh scraping of traditional tools. It is gentle, effective, and safe for all ages.',
-    icon: <Microscope size={32} />,
+    id: 'pediatric',
+    title: 'Pediatric Dentistry',
+    description: 'Specialized and gentle dental care designed specifically for children.',
+    longDescription: 'We make dental visits fun for kids! Our pediatric treatments focus on preventive care, fluoride applications, and habit breaking appliances in a friendly, fear-free environment.',
+    icon: <Heart size={32} />,
     color: 'from-emerald-500 to-teal-400',
-    features: ['No Scraping/Noise', 'Warm Water Air-Flow', 'Stain Removal', 'Gum Strengthening Massage']
+    features: ['Fear-Free Environment', 'Cavity Prevention', 'Fluoride Treatment', 'Habit Breaking']
   }
 ];
 
@@ -59,7 +59,7 @@ const Services: React.FC<ServicesProps> = ({ onBookAppointment }) => {
             viewport={{ once: true }}
             className="text-medical-light font-bold tracking-wider uppercase text-sm"
           >
-            Our Expertise
+            Comprehensive Care
           </motion.span>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -68,7 +68,7 @@ const Services: React.FC<ServicesProps> = ({ onBookAppointment }) => {
             transition={{ delay: 0.1 }}
             className="mt-4 text-4xl md:text-5xl font-display font-bold text-medical-dark"
           >
-            Precision Treatments
+            Our Treatments
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -77,7 +77,7 @@ const Services: React.FC<ServicesProps> = ({ onBookAppointment }) => {
             transition={{ delay: 0.2 }}
             className="mt-4 text-gray-500 text-lg"
           >
-            We combine art and engineering to deliver dental care that looks as good as it feels.
+            From cosmetic makeovers to routine hygiene, we provide complete dental solutions in Gomti Nagar.
           </motion.p>
         </div>
 
@@ -151,7 +151,7 @@ const Services: React.FC<ServicesProps> = ({ onBookAppointment }) => {
                         </div>
                         <div className="ml-6 text-white">
                             <h3 className="text-3xl font-display font-bold">{selectedService.title}</h3>
-                            <p className="text-white/80">Premium Treatment</p>
+                            <p className="text-white/80">Panacea Dental Clinic</p>
                         </div>
                     </div>
 
@@ -185,7 +185,7 @@ const Services: React.FC<ServicesProps> = ({ onBookAppointment }) => {
                                     if(onBookAppointment) onBookAppointment();
                                 }}
                              >
-                                Book This Treatment
+                                Book Appointment
                              </AnimatedButton>
                              <button 
                                 onClick={() => setSelectedService(null)}
