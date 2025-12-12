@@ -18,10 +18,10 @@ const Navbar: React.FC<NavbarProps> = ({ onBookVisit }) => {
   }, []);
 
   const navLinks = [
-    { name: 'Services', href: '#services' },
+    { name: 'Treatments', href: '#services' },
     { name: 'Technology', href: '#technology' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'About', href: '#about' },
+    { name: 'About Us', href: '#about' },
+    { name: 'Contact', href: '#footer' },
   ];
 
   return (
@@ -43,10 +43,10 @@ const Navbar: React.FC<NavbarProps> = ({ onBookVisit }) => {
               {/* Logo */}
               <a href="#" className="flex items-center gap-2 group">
                 <div className="w-10 h-10 bg-gradient-to-tr from-medical-dark to-medical-light rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:rotate-12 transition-transform">
-                  R
+                  P
                 </div>
                 <span className="font-display font-bold text-xl text-medical-dark tracking-tight">
-                  Rishi <span className="text-medical-light">Dental</span>
+                  Panacea <span className="text-medical-light">Dental</span>
                 </span>
               </a>
 
@@ -134,7 +134,7 @@ const Navbar: React.FC<NavbarProps> = ({ onBookVisit }) => {
                 transition={{ delay: 0.4 }}
                 className="mt-12 p-6 bg-gray-50 rounded-2xl"
               >
-                <p className="text-gray-500 text-sm mb-4">Emergency?</p>
+                <p className="text-gray-500 text-sm mb-4">Book Appointment</p>
                 <a href="tel:+919876543210" className="flex items-center gap-3 text-xl font-bold text-medical-dark">
                   <div className="w-10 h-10 bg-accent-coral rounded-full flex items-center justify-center text-white">
                     <Phone size={18} />
